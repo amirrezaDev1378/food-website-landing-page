@@ -3,6 +3,7 @@ import useStyles from "./home.page.style";
 import Header from "../components/header/header";
 import {Button, Grid, Stack} from "@mui/material";
 import {Add} from "@mui/icons-material";
+import Footer from "../components/footer/footer";
 
 function Sec1Option(props) {
     return (
@@ -85,7 +86,7 @@ function HomePage(props) {
                     direction={"row"}
                     spacing={10}
                     alignItems={"center"}
-                    paddingTop={"20%"}
+                    paddingTop={"15%"}
                 >
 
                     <Grid className={classes.secPlansPizza1} md={5}>
@@ -165,6 +166,8 @@ function HomePage(props) {
                     </Grid>
                 </Stack>
             </section>
+            <br/><br/><br/><br/>
+            <Footer />
         </div>
     );
 }
