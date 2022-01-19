@@ -10,7 +10,7 @@ function Header(props) {
         <div>
             <Stack direction={"row"}>
                 <Grid md={5}>
-                    <img src={blackLogo} alt="LOGO"/>
+                    <img data-aos="fade-right" src={blackLogo} alt="LOGO"/>
                 </Grid>
                 <Grid justifyContent={"flex-end"} display={'flex'} md={7}>
                     <Stack
@@ -27,7 +27,7 @@ function Header(props) {
                     </Stack>
                 </Grid>
             </Stack>
-            <img src={mouseScroll} alt="mouse"/>
+            <img data-aos="fade-up" src={mouseScroll} alt="mouse"/>
         </div>
     );
 }

@@ -1,22 +1,25 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import useStyles from "./home.page.style";
 import Header from "../components/header/header";
 import {Button, Grid, Stack} from "@mui/material";
 import {Add} from "@mui/icons-material";
 import Footer from "../components/footer/footer";
-
-function Sec1Option(props) {
+import AOS from 'aos';
+import "aos/dist/aos.css";
+function Sec1Option(props ) {
+    console.log(props)
+    const {title , text, ...restProps} = props;
     return (
-        <div>
+        <div {...restProps}>
             <Stack style={{width: "70%"}} direction={"row"} spacing={0}>
                 <Add style={{backgroundColor: "#F8A22F", borderRadius: "100%", padding: 6, color: "white"}}/>
                 <Stack paddingLeft={"10px"} textAlign={"left"} direction={"column"} spacing={0}>
                     <h3 style={{fontWeight: "normal"}}>
-                        {props.title}
+                        {title}
                     </h3>
 
                     <p style={{color: "#707070"}}>
-                        {props.text}
+                        {text}
                     </p>
                 </Stack>
             </Stack>
@@ -27,16 +30,29 @@ function Sec1Option(props) {
 
 function HomePage(props) {
     const classes = useStyles();
+    useEffect(() => {
+        AOS.init({
+            delay:500,
+            duration:800,
+            once:false,
+            mirror: true,
+            debounceDelay: 50,
+
+        });
+        AOS.refresh();
+    }, []);
     return (
         <div>
             <Header/>
             <section className={classes.section1}>
                 <Stack direction={"row"} spacing={15}>
-                    <Grid className={classes.sec1image} md={5}>
+                    <Grid data-aos="fade-right" className={classes.sec1image} md={5}>
 
                     </Grid>
                     <Grid md={5} style={{textAlign: "left"}}>
-                        <h1 style={{
+                        <h1
+                            data-aos="fade-up"
+                            style={{
                             display: "flex",
                             flexDirection: "column",
                             textAlign: "left",
@@ -56,17 +72,23 @@ function HomePage(props) {
 
                         </h1>
                         <br/>
-                        <Sec1Option title={'Signature Pizzas'} text={'Choose one of our plans, enter delivery time.'}/>
+                        <Sec1Option data-aos="fade-up" data-aos-delay="650" title={'Signature Pizzas'} text={'Choose one of our plans, enter delivery time.'}/>
                         <br/>
                         <Sec1Option
+                            data-aos="fade-up" data-aos-delay="850"
                             title={'Oven-Baked Subs'}
                             text={'Choose one of our plans, enter delivery time and enjoy delicious food without leaving your home!'}
                         />
                         <br/>
-                        <Sec1Option title={'Wings, Sides & More'} text={'Choose one of our plans, enter delivery time.'}/>
+                        <Sec1Option
+                            data-aos="fade-up" data-aos-delay="1050"
+                            title={'Wings, Sides & More'}
+                            text={'Choose one of our plans, enter delivery time.'}
+                        />
                         <br/>
                         <br/>
                         <Button
+                            data-aos="fade-up" data-aos-delay="1300"
                             style={{
                                 backgroundColor: "#F8A22F",
                                 color: "white",
@@ -89,7 +111,7 @@ function HomePage(props) {
                     paddingTop={"15%"}
                 >
 
-                    <Grid className={classes.secPlansPizza1} md={5}>
+                    <Grid data-aos='fade-right' className={classes.secPlansPizza1} md={5}>
                         <div
                             style={{
                                 display: "flex",
@@ -126,7 +148,7 @@ function HomePage(props) {
                         </div>
 
                     </Grid>
-                    <Grid className={classes.secPlansPizza2} md={5}>
+                    <Grid data-aos={"fade-left"} className={classes.secPlansPizza2} md={5}>
                         <div
                             style={{
                                 display: "flex",
