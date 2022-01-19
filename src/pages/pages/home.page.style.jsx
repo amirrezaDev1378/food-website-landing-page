@@ -24,6 +24,11 @@ const useStyles = makeStyles({
         height:"60vh",
         backgroundRepeat:"no-repeat",
         backgroundSize:"contain",
+        transition:"600ms !important",
+        "&:hover":{
+            transform:"scale(1.1) !important",
+            cursor:"pointer"
+        }
     },
     secPlansPizza2: {
         color:"white",
@@ -31,6 +36,11 @@ const useStyles = makeStyles({
         height:"60vh",
         backgroundRepeat:"no-repeat",
         backgroundSize:"contain",
+        transition:"600ms !important",
+        "&:hover":{
+            transform:"scale(1.1) !important",
+            cursor:"pointer"
+        }
     }
 });
 export default useStyles;

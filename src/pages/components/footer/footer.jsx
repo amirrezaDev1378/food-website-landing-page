@@ -22,6 +22,7 @@ function Footer(props) {
                     <p style={{color: 'white' , textAlign:"left"}}>
                         <b> Contact</b>
                         <br/>
+                        <br/>
                         Lorem ipsum, #239, Trinity Plaza
                         <br/>
                         Peuerbach. Gorakhpur, Modal
